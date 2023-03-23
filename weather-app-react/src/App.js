@@ -1,6 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Cities from "./components/Cities";
+import Footer from "./components/Footer";
+import GlobeSpotter from "./components/GlobeSpotter";
 import Home from "./components/Home";
+import News from "./components/News";
 import "./index.css";
 
 function App() {
@@ -29,6 +33,7 @@ function App() {
   console.log(data);
   return (
     <div className="App">
+      {/* Navar portion */}
       <div className="navbar__main">
         <p>Home</p>
         <p>Cities</p>
@@ -37,8 +42,24 @@ function App() {
 
       {/* Main Content area begins here  */}
       {data.weather && (
-        <Home weather={data.weather[0].main} humidity={data.main.humidity} wind={data.wind.speed} temp={data.main.temp} city={data.name}/>
+        <Home
+          weather={data.weather[0].main}
+          humidity={data.main.humidity}
+          wind={data.wind.speed}
+          temp={data.main.temp}
+          city={data.name}
+          img={data.weather[0].icon}
+        />
       )}
+
+      {/* Cities section JSX hereby */}
+      <Cities />
+      {/* Globe Place spot integration */}
+      <GlobeSpotter />
+      {/* News section of the website begins here */}
+      <News />
+      {/* Fotter ***end of the website*** component */}
+      <Footer />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import "../index.css";
 
 const Home = ({ weather, humidity, wind, city, temp, time, img }) => {
     let date = new Date();
+    let weatherIcon = `http://openweathermap.org/img/wn/${img}@2x.png`
     date = date.toString().slice(0,25);
   return (
     <div className="home__main__div">
@@ -29,7 +30,7 @@ const Home = ({ weather, humidity, wind, city, temp, time, img }) => {
           <h3>{city}</h3>
           <p>{date}</p>
         </div>
-        <p>☀️</p>
+        <img src={weatherIcon} alt="_weather_icon" style={{filter: "brightness(0) invert(1)"}}/>
       </div>
     </div>
   );

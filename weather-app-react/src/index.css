@@ -1,14 +1,14 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -23,16 +23,16 @@ code {
   color: white;
 }
 
-
 /* Home page CSS below */
 .home__main__div {
-  background: url('https://www.capegazette.com/sites/capegazette/files/2013/11/field/image/Sunset%20Sky%2011.1.2013_1667.jpg') no-repeat center center/cover;
+  background: url("https://www.capegazette.com/sites/capegazette/files/2013/11/field/image/Sunset%20Sky%2011.1.2013_1667.jpg")
+    no-repeat center center/cover;
   height: auto;
   padding: 2rem;
 }
 .home__city__temp__details__left {
   backdrop-filter: blur(10px);
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   color: white;
   width: 25vw;
@@ -46,15 +46,120 @@ code {
   font-size: 1.3rem;
 }
 .home__weather__details__right {
-  backdrop-filter: blur(10px);
-  background: rgba(0,0,0,0.1);
-  border-radius: 10px;
   color: white;
-  font-size: 2rem;
+  font-size: 2.5rem;
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 1rem;
   width: 25vw;
   margin-right: 70%;
   margin-top: 10%;
-  padding: 1rem 7rem;
+  padding: 1rem 4rem;
+}
+.home__weather__details__right > div > p {
+  margin-top: -20%;
+  font-size: 14px;
+}
+
+/* Cities section CSS begins here */
+.cities__main {
+  text-align: center;
+}
+.cards__grid {
+  display: flex;
+  gap: 4rem;
+  /* width: 63vw; */
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.indv__card__items {
+  transition: transform 0.2s;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 1rem;
+  border-radius: 15px;
+}
+.indv__card__items:hover {
+  transform: scale(1.1);
+}
+.indv__card__items > img {
+  width: 17vw;
+  border-radius: 10px 10px 0px 0px;
+}
+.indv_card_deets {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* input section below cards */
+#card__items__search {
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  font-size: 1.5rem;
+  padding: 0.6rem 1.7rem;
+  padding-top: 1.2rem;
+  width: 32vw;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: none;
+  border-radius: 10px;
+}
+.search__btn__items__card {
+  background-color: transparent;
+  border: none;
+  margin-left: -4vw;
+  color: grey;
+}
+
+/* Globe postion spotter styling */
+.globe__postion__spotter {
+  width: 100%;
+  height: 900px;
+}
+
+/* News potion CSS begins here */
+.indv__card__news {
+  position: relative;
+}
+.indv__card__news > img {
+  width: 20vw;
+  border-radius: 10px;
+  filter: brightness(80%);
+}
+.indv_card_news__details > h2 {
+  position: absolute;
+  color: white;
+  bottom: 5px;
+  left: 14px;
+  font-size: 1.5rem;
+}
+.read__more__btn {
+  position: absolute;
+  top: 50%;
+  left: 32%;
+  padding: 10px 20px;
+  border: 1px solid white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+}
+.read__more__btn:hover {
+  color: black;
+  background-color: white;
+}
+.indv__card__news > button {
+  display: none;
+}
+.indv__card__news:hover > .indv_card_news__details{
+  filter: brightness(20%);
+}
+.indv__card__news:hover > img {
+  filter: brightness(20%);
+  transition: .3s;
+}
+.indv__card__news:hover button {
+  display: block;
 }
