@@ -11,3 +11,50 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Navbar css begins here */
+.navbar__main {
+  display: flex;
+  gap: 5rem;
+  justify-content: center;
+  font-size: 1.3rem;
+  width: 100%;
+  position: absolute;
+  color: white;
+}
+
+
+/* Home page CSS below */
+.home__main__div {
+  background: url('https://www.capegazette.com/sites/capegazette/files/2013/11/field/image/Sunset%20Sky%2011.1.2013_1667.jpg') no-repeat center center/cover;
+  height: auto;
+  padding: 2rem;
+}
+.home__city__temp__details__left {
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.1);
+  border-radius: 10px;
+  color: white;
+  width: 25vw;
+  margin-left: 70%;
+  margin-top: 5%;
+  padding: 1rem;
+}
+.temp__details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+}
+.home__weather__details__right {
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.1);
+  border-radius: 10px;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  width: 25vw;
+  margin-right: 70%;
+  margin-top: 10%;
+  padding: 1rem 7rem;
+}
