@@ -7,12 +7,11 @@ import Home from "./components/Home";
 import News from "./components/News";
 import "./index.css";
 
-import {RiSearchLine} from "react-icons/ri"
+import { RiSearchLine } from "react-icons/ri";
 
 function App() {
   const api_key = "02d239601251d949579a12127209ff8e";
   const [data, setData] = useState({});
-  const [search, setSearch] = useState("");
 
   const fetchData = async () => {
     try {
@@ -38,13 +37,13 @@ function App() {
       }, delay);
     };
   }
-  
+
   const debouncedSearchData = debounce(searchData, 3000);
 
   function searchData(e) {
-    searchWeather(e.target.value)
+    searchWeather(e.target.value);
   }
-  function searchWeather(search){
+  function searchWeather(search) {
     try {
       axios
         .get(
@@ -86,7 +85,12 @@ function App() {
       <Cities />
       {/* Input section below city combines */}
       <div className="input__section_main">
-        <input type="text" placeholder="Search City" id="card__items__search" onChange={debouncedSearchData}/>
+        <input
+          type="text"
+          placeholder="Search City"
+          id="card__items__search"
+          onChange={debouncedSearchData}
+        />
         <button className="search__btn__items__card">
           <RiSearchLine size={30} />
         </button>

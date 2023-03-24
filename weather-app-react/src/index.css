@@ -30,6 +30,26 @@ code {
   height: auto;
   padding: 2rem;
 }
+@media screen and (max-width: 678px){
+  .home__main__div > div{
+    display: block;
+    margin: 0px;
+    margin-top: 4rem;
+    margin-left: 8vw;
+    width: 60%;
+  }
+  .home__weather__details__right > *{
+    margin-left: -3vw;
+  }
+  .home__city__temp__details__left {
+    text-align: center;
+  }
+  .home__city__temp__details__left > div{
+    display: block;
+    text-align: center;
+  }
+}
+
 .home__city__temp__details__left {
   backdrop-filter: blur(10px);
   background: rgba(0, 0, 0, 0.1);
@@ -92,6 +112,13 @@ code {
   justify-content: space-between;
 }
 
+@media screen and (max-width: 678px){
+  .cards__grid{
+    display: block;
+    width: 90%;
+  }
+}
+
 /* input section below cards */
 .input__section_main{
   text-align: center;
@@ -112,6 +139,15 @@ code {
   border: none;
   margin-left: -4vw;
   color: grey;
+}
+
+@media screen and (max-width: 678px){
+  #card__items__search{
+    width: 60%;
+  }
+  .search__btn__items__card{
+    margin-left: 0.5%;
+  }
 }
 
 /* Globe postion spotter styling */
@@ -167,6 +203,17 @@ code {
   display: block;
 }
 
+@media screen and (max-width: 678px) {
+  .indv__card__news > img{
+    width: 60%;
+  }
+  .indv_card_news__details>h2 {
+    font-size: 2rem;
+    width: 50%;
+    margin-left: 15%;
+  }
+}
+
 /* Footer component CSS */
 .footer__main{
   background-color: black;
@@ -183,4 +230,10 @@ code {
 .footer__component__right {
   display: flex;
   font-size: 1.5rem;
+}
+@media screen and (max-width: 678px){
+  .footer__components{
+    display: block;
+    text-align: center;
+  }
 }

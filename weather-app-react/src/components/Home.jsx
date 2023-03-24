@@ -1,7 +1,7 @@
 import React from "react";
 import "../index.css";
 
-const Home = ({ weather, humidity, wind, city, temp, time, img }) => {
+const Home = ({ weather, humidity, wind, city, temp, img }) => {
     let date = new Date();
     let weatherIcon = `http://openweathermap.org/img/wn/${img}@2x.png`
     date = date.toString().slice(0,25);
