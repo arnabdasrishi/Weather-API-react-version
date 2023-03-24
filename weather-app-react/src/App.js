@@ -7,6 +7,8 @@ import Home from "./components/Home";
 import News from "./components/News";
 import "./index.css";
 
+import {RiSearchLine} from "react-icons/ri"
+
 function App() {
   const api_key = "02d239601251d949579a12127209ff8e";
   const [data, setData] = useState({});
@@ -26,11 +28,39 @@ function App() {
     }
   };
 
+  // Applying a debounce function for the delayed effect in search
+  function debounce(func, delay) {
+    let timeoutId;
+    return function (...args) {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        func.apply(this, args);
+      }, delay);
+    };
+  }
+  
+  const debouncedSearchData = debounce(searchData, 3000);
+
+  function searchData(e) {
+    searchWeather(e.target.value)
+  }
+  function searchWeather(search){
+    try {
+      axios
+        .get(
+          `https://api.openweathermap.org/data/2.5/weather?q=${search}&APPID=${api_key}&units=metric`
+        )
+        .then((response) => {
+          setData(response.data);
+        });
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   useEffect(() => {
     fetchData();
   }, []);
-
-  console.log(data);
   return (
     <div className="App">
       {/* Navar portion */}
@@ -54,11 +84,19 @@ function App() {
 
       {/* Cities section JSX hereby */}
       <Cities />
+      {/* Input section below city combines */}
+      <div className="input__section_main">
+        <input type="text" placeholder="Search City" id="card__items__search" onChange={debouncedSearchData}/>
+        <button className="search__btn__items__card">
+          <RiSearchLine size={30} />
+        </button>
+      </div>
+
       {/* Globe Place spot integration */}
       <GlobeSpotter />
       {/* News section of the website begins here */}
       <News />
-      {/* Fotter ***end of the website*** component */}
+      {/* Footer ***end of the website*** component */}
       <Footer />
     </div>
   );

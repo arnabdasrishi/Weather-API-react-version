@@ -56,13 +56,6 @@ const Cities = () => {
           </div>
         </div>
       </div>
-
-      <div className="input__section_main">
-        <input type="text" placeholder="Search City" id="card__items__search" />
-        <button className="search__btn__items__card">
-          <RiSearchLine size={30}/>
-        </button>
-      </div>
     </div>
   );
 };

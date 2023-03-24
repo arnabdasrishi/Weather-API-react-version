@@ -52,7 +52,7 @@ code {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  width: 25vw;
+  width: 40%;
   margin-right: 70%;
   margin-top: 10%;
   padding: 1rem 4rem;
@@ -93,6 +93,9 @@ code {
 }
 
 /* input section below cards */
+.input__section_main{
+  text-align: center;
+}
 #card__items__search {
   margin-top: 10rem;
   margin-bottom: 5rem;
@@ -162,4 +165,22 @@ code {
 }
 .indv__card__news:hover button {
   display: block;
+}
+
+/* Footer component CSS */
+.footer__main{
+  background-color: black;
+  color: white;
+  height: 300px;
+  margin-top: 7rem;
+}
+.footer__components{
+  display: flex;
+  padding-top: 70px;
+  justify-content: space-around;
+  gap: 20vw;
+}
+.footer__component__right {
+  display: flex;
+  font-size: 1.5rem;
 }
